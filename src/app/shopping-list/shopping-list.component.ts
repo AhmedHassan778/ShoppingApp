@@ -16,5 +16,7 @@ export class ShoppingListComponent implements OnInit {
     this.ingredients = this.sLService.getAllIngredients();
     this.sLService.ingradientsChanged.subscribe(ings => this.ingredients = ings);
   }
-
+  onEditItem(index:number){
+    this.sLService.startEditing.next(index);
+  }
 }
